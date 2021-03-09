@@ -28,7 +28,7 @@ class App extends Component {
         // console.log(res)
         this.setState({ posts: res.data });
       })
-      .catch(err => console.log(err));
+      // .catch(err => console.log(err));
   }
 
   updatePost( id, text ) {
@@ -37,7 +37,7 @@ class App extends Component {
         // console.log(res)
         this.setState({ posts: res.data });
       })
-      .catch(err => console.log(err));
+      // .catch(err => console.log(err));
   }
 
   deletePost( id ) {
@@ -46,15 +46,16 @@ class App extends Component {
         // console.log(res)
         this.setState({ posts: res.data });
       })
-      .catch(err => console.log(err));
+      // .catch(err => console.log(err));
   }
 
   createPost( text ) {
-    axios.post(`https://practiceapi.devmountain.com/api/posts?text=${ text }`)
+    axios.post(`https://practiceapi.devmountain.com/api/posts`,{ text })
       .then(res => {
+        // console.log(res)
         this.setState({ posts: res.data });
       })
-      .catch(err => console.log(err));
+      // .catch(err => console.log(err));
   }
 
   render() {
